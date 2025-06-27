@@ -1,3 +1,9 @@
+/*	Servlet.class가 실행되는 순서
+ 	1.DD파일(web.xml)파일을읽어온다.
+ 	2. 생성자 호출 주문서에 등록된 <servlet-name>이름</servlet-name>으로 서블릿객체를 생성
+ 	3. 클라이언트 요청이 들어오면 Thread생성(==service() call) 요청을 수행 *(요청 1개당 Thread 1개 생성 요청응답 후 Thread Death)
+ 	
+ */
 package web.generic.servlet;
 
 import java.io.IOException;

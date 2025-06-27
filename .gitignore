@@ -1,25 +1,56 @@
-# Compiled class file
-*.class
+# === OS 관련 임시 파일 ===
+.DS_Store
+Thumbs.db
 
-# Log file
+# === Eclipse/IDEA 설정 파일 ===
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# === 빌드 산출물 ===
+/bin/
+/target/
+/build/
+
+# === Maven / Gradle ===
+/.mvn/
+/.gradle/
+!gradle-wrapper.jar
+/build/
+/out/
+/dependency-reduced-pom.xml
 *.log
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# === Java 패키징 파일 ===
 *.jar
 *.war
-*.nar
 *.ear
 *.zip
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# === 컴파일 산출물 ===
+*.class
+*.swp
+*.tmp
+
+# === JetBrains (IntelliJ IDEA) ===
+.idea/
+
+# === Tomcat 서버 설정 ===
+/Servers/
+server.xml
+
+# === 로그 및 오류 덤프 ===
+*.log
 hs_err_pid*
 replay_pid*
+
+# === 기타 ===
 /.metadata/
+*.tmp
+*.bak
+*.old

@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+	<!-- 1. 서버내부이름 매핑  -->
 	<servlet>
-		<servlet-name>MyGenericServlet</servlet-name>
-		<servlet-class>package web.generic.servlet.MyGenericServlet</servlet-class>
+		<servlet-name>MyGenericServlet</servlet-name><!--아래 주소값을 name태그로 매핑  -->
+		<servlet-class>web.generic.servlet.MyGenericServlet</servlet-class> <!--서버내부이름  -->
 	</servlet>
+	
+	<!-- 2. 클라이언트 매핑  -->
+	<servlet-mapping>
+		<servlet-name>MyGenericServlet</servlet-name>
+		<url-pattern>/MGS</url-pattern> <!--클라이언트(Front)단에서 요청한 주소값을 servlet-name MGS로 매핑  -->
+	</servlet-mapping>
 </web-app>
