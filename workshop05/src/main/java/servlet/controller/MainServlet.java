@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import servlet.model.User;
 import servlet.model.UserDAOImpl;
@@ -44,7 +45,9 @@ public class MainServlet extends HttpServlet {
 		try {
 			User user=UserDAOImpl.getInstance().login(id, pass);
 			if(user !=null) { //로그인 정상적으로 성공
-				request.setAttribute("user", user);
+//				request.setAttribute("user", user);
+				HttpSession session = request.getSession();
+				session.setAttribute("user", user);
 				request.getRequestDispatcher("loginSuccess.jsp").forward(request, response);
 			}else {//로그인 실패 
 				//로그인 실패는 data를 가지고 넘어가는게 아니기 때문에 서버상이동이 아닌 html이동으로 가야한다.
