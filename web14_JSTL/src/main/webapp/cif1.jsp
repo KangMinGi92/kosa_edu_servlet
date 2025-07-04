@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +7,34 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%-- <h2><b><%=request.getParameter("id") %></b>님이 회원 가입 되셨습니다!!!</h2> --%>
-<h2><b>${param.id}</b>님이 회원 가입 되셨습니다!!!</h2>
+<h2>JSTL if 사용하기</h2>
+<form action="cif1_view.jsp">
+NUM <input type="text" name="NUM">
+<input type="submit" value="전송">
+</form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
