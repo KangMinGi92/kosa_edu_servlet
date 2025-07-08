@@ -25,7 +25,7 @@
             background: #ddd;
         }
         .center{
-        	margin-left: 740px;
+        	text-align: center;
         	padding-top: 30px;
         }
     </style>
@@ -49,7 +49,9 @@ $(function(){
 					book[key.trim()] = value.trim();
 				});
 				$('.result>h4').remove();
-				$('.result').prepend("<h4><font color=crimson>Book상세정보 출력 -제목 : "+book.title+", 출판사 : "+book.publisher+", 저자 : "+book.author+"</font></h4>");
+				$('.result').prepend("<h4><font color=crimson>Book상세정보 출력 &nbsp&nbsp&nbsp-제목 : "+
+						book.title+",&nbsp&nbsp&nbsp 출판사 : "+book.publisher+
+						",&nbsp&nbsp&nbsp 저자 : "+book.author+"</font></h4>");
 			},
 		})//ajax
 	});//over
@@ -69,15 +71,17 @@ $(function(){
         <input type="text" name="searchText">
         <input type="submit" value="검색">
     </form>
-    <table border="1">
-        <tr>
-            <th>도서번호</th>
-            <th>도서명</th>
-            <th>도서분류</th>
-            <th>저자</th>
-        </tr>
-        
-        <c:forEach items="${list}" var="book">
+    	
+    <c:choose>
+    	<c:when test="${not empty list}">
+    	    <table border="1">
+	        <tr>
+	            <th>도서번호</th>
+	            <th>도서명</th>
+	            <th>도서분류</th>
+	            <th>저자</th>
+	        </tr>
+            <c:forEach items="${list}" var="book">
 			<tr>
 				<td>${book.isbn}</td>
 				<td><span id="${book.isbn}" class="subject">${book.title}</span></td>
@@ -86,6 +90,11 @@ $(function(){
 			</tr>
 		</c:forEach>
     </table>
+    	</c:when>
+    	<c:otherwise>
+    		<h2 style=text-align:center;color:crimson;>입력된 책이 존재 하지 않습니다.</h2>
+    	</c:otherwise>
+    </c:choose>
     <div class="result" style=text-align:center;>
     
     </div>

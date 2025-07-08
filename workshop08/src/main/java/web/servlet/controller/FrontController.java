@@ -52,6 +52,7 @@ public class FrontController extends HttpServlet {
 	private String ajax(HttpServletRequest request, HttpServletResponse response) {
 		String isbn=request.getParameter("isbn");
 		try {
+			
 			Book book = BookDAOImpl.getInstance().showBook(isbn);
 			request.setAttribute("book", book);
 		}catch(Exception e) {
